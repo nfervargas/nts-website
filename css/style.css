@@ -1,0 +1,328 @@
+/* =====================
+   ESTILOS GENERALES
+===================== */
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #1f2d3d;
+    background-color: #ffffff;
+}
+
+/* =====================
+   HEADER
+===================== */
+header {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 30px 40px;
+
+    min-height: 400px;
+
+    background-size: contain;
+    background-position: center 150px;
+    background-repeat: no-repeat;
+
+    animation: slider 25s infinite;
+}
+
+/* Animación */
+@keyframes slider {
+    0% {
+        background-image: url("../img/foto-corporativa-2.png");
+    }
+    25% {
+        background-image: url("../img/cableado.png");
+    }
+    50% {
+        background-image: url("../img/seguridad.png");
+    }
+    75% {
+        background-image: url("../img/infraestructura.png");
+    }
+    100% {
+        background-image: url("../img/servicios-locativos.png");
+    }
+}
+/* Asegura que el contenido esté sobre el overlay */
+header * {
+    position: center;
+    z-index: 1;
+}
+
+
+/* =====================
+   LOGO Y TEXTO
+===================== */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: -100px; /* ⬅ SUBE EL LOGO */
+}
+
+.logo img {
+    height: 300px;
+}
+
+.logo-text h1 {
+    margin: 0;
+    font-size: 30px;
+    color: #1f2d3d;
+}
+
+.logo-text p {
+    margin: 0;
+    font-size: 16px;
+    color: #1f2d3d;
+}
+
+/* =====================
+   MENÚ
+===================== */
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 80px; /* ⬅ separación IGUAL para todos */
+}
+nav a {
+    margin-left: 100px;
+    text-decoration: none;
+    color: #030c2f;
+    font-weight: 500;
+}
+
+nav a:hover {
+    color: #ffe4cf;
+}
+
+/* =====================
+   HERO
+===================== */
+.hero {
+    padding: 90px 40px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.hero h2 {
+    font-size: 42px;
+    max-width: 800px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    max-width: 650px;
+    color: #5a6b7b;
+    margin-bottom: 35px;
+}
+
+/* =====================
+   BOTONES
+===================== */
+.btn {
+    display: inline-block;
+    padding: 14px 28px;
+    background-color: #0077cc;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background-color: #005fa3;
+}
+
+/* =====================
+   SECCIONES
+===================== */
+section {
+    padding: 80px 40px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.section-title {
+    font-size: 32px;
+    margin-bottom: 50px;
+}
+
+/* =====================
+   SERVICIOS
+===================== */
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+}
+
+.service-box h3 {
+    margin-top: 0;
+    font-size: 22px;
+}
+
+.service-box p {
+    color: #1f2d3d;
+    line-height: 1.6;
+}
+
+/* =====================
+   PROCESO
+===================== */
+.process {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+}
+
+.process-step {
+    border-left: 3px solid #0077cc;
+    padding-left: 20px;
+}
+
+/* =====================
+   CTA
+===================== */
+.cta {
+    background-color: #f4f8fb;
+    text-align: center;
+    padding: 80px 40px;
+}
+
+.cta h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+/* =====================
+   FOOTER
+===================== */
+footer {
+    background-color: #1f2d3d;
+    color: #ffffff;
+    text-align: center;
+    padding: 25px;
+    font-size: 14px;
+}
+
+/* =====================
+   RESPONSIVE (MÓVIL)
+===================== */
+@media (max-width: 768px) {
+
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    nav a {
+        margin-left: 0;
+        margin-right: 15px;
+    }
+
+    .hero h2 {
+        font-size: 32px;
+    }
+
+    section {
+        padding: 60px 25px;
+    }
+}
+/* =====================
+   MENÚ DESPLEGABLE POR CLIC
+===================== */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Ocultar checkbox */
+.dropdown input {
+    display: none;
+}
+
+/* Estilo del botón Servicios */
+.dropdown label {
+    color: #1f2d3d;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+/* Menú oculto */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 35px;
+    right: 0;
+    background-color: #ffffff;
+    min-width: 260px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    border-radius: 6px;
+    overflow: hidden;
+    z-index: 2000;
+}
+
+/* Mostrar menú al hacer clic */
+.dropdown input:checked + label + .dropdown-content {
+    display: block;
+}
+
+/* Links */
+.dropdown-content a {
+    display: block;
+    padding: 12px 18px;
+    color: #1f2d3d;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.dropdown-content a:hover {
+    background-color: #f2f6fa;
+}
+/* =========================
+   FORMULARIO DE CONTACTO
+========================= */
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 8px;
+    border: 1px solid #d0d7de;
+    font-size: 15px;
+    font-family: inherit;
+    background-color: #f9fbfd;
+    transition: all 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #3fa9f5;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(63,169,245,0.15);
+}
+
+.contact-form textarea {
+    resize: none;
+}
+
+.contact-form .btn {
+    align-self: flex-start;
+    padding: 12px 30px;
+    font-size: 15px;
+    border-radius: 30px;
+    margin-top: 10px;
+    cursor: pointer;
+}
