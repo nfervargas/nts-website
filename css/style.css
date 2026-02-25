@@ -29,10 +29,10 @@ header {
 
 /* Animación */
 @keyframes slider {
-    0% {
+    10% {
         background-image: url("../img/foto-corporativa-2.png");
     }
-    25% {
+    15% {
         background-image: url("../img/cableado.png");
     }
     50% {
