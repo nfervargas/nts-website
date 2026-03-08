@@ -326,3 +326,58 @@ footer {
     margin-top: 10px;
     cursor: pointer;
 }
+/* ===== MOBILE FIX ===== */
+
+@media (max-width:768px){
+
+header{
+flex-direction:column;
+align-items:center;
+text-align:center;
+padding:20px;
+}
+
+.logo{
+flex-direction:column;
+margin-top:0;
+}
+
+.logo img{
+height:90px;
+}
+
+.logo-text h1{
+font-size:20px;
+}
+
+.logo-text p{
+font-size:14px;
+}
+
+.main-nav{
+flex-direction:column;
+gap:12px;
+}
+
+nav a{
+margin:0;
+}
+
+.hero{
+padding:40px 20px;
+text-align:center;
+}
+
+.hero h2{
+font-size:26px;
+}
+
+.hero p{
+font-size:16px;
+}
+
+section{
+padding:50px 20px;
+}
+
+}
