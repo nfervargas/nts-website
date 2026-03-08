@@ -21,7 +21,7 @@ header {
     min-height: 400px;
 
     background-size: contain;
-    background-position: center 260px;
+    background-position: center 150px;
     background-repeat: no-repeat;
 
     animation: slider 25s infinite;
