@@ -207,138 +207,25 @@ footer {
     padding: 25px;
     font-size: 14px;
 }
-
-/* =====================
-   RESPONSIVE (MÓVIL)
-===================== */
-@media (max-width: 768px) {
-
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 20px;
-    }
-
-    nav a {
-        margin-left: 0;
-        margin-right: 15px;
-    }
-
-    .hero h2 {
-        font-size: 32px;
-    }
-
-    section {
-        padding: 60px 25px;
-    }
-}
-/* =====================
-   MENÚ DESPLEGABLE POR CLIC
-===================== */
-
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-/* Ocultar checkbox */
-.dropdown input {
-    display: none;
-}
-
-/* Estilo del botón Servicios */
-.dropdown label {
-    color: #1f2d3d;
-    cursor: pointer;
-    font-weight: 500;
-}
-
-/* Menú oculto */
-.dropdown-content {
-    display: none;
-    position: absolute;
-    top: 35px;
-    right: 0;
-    background-color: #ffffff;
-    min-width: 260px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    border-radius: 6px;
-    overflow: hidden;
-    z-index: 2000;
-}
-
-/* Mostrar menú al hacer clic */
-.dropdown input:checked + label + .dropdown-content {
-    display: block;
-}
-
-/* Links */
-.dropdown-content a {
-    display: block;
-    padding: 12px 18px;
-    color: #1f2d3d;
-    text-decoration: none;
-    font-size: 15px;
-}
-
-.dropdown-content a:hover {
-    background-color: #f2f6fa;
-}
 /* =========================
-   FORMULARIO DE CONTACTO
+   DISEÑO PARA CELULARES
 ========================= */
-
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 14px 16px;
-    border-radius: 8px;
-    border: 1px solid #d0d7de;
-    font-size: 15px;
-    font-family: inherit;
-    background-color: #f9fbfd;
-    transition: all 0.3s ease;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-    outline: none;
-    border-color: #3fa9f5;
-    background-color: #ffffff;
-    box-shadow: 0 0 0 3px rgba(63,169,245,0.15);
-}
-
-.contact-form textarea {
-    resize: none;
-}
-
-.contact-form .btn {
-    align-self: flex-start;
-    padding: 12px 30px;
-    font-size: 15px;
-    border-radius: 30px;
-    margin-top: 10px;
-    cursor: pointer;
-}
-/* ===== MOBILE FIX ===== */
 
 @media (max-width:768px){
 
+/* HEADER */
 header{
 flex-direction:column;
 align-items:center;
 text-align:center;
 padding:20px;
+gap:20px;
 }
 
+/* LOGO */
 .logo{
 flex-direction:column;
+align-items:center;
 margin-top:0;
 }
 
@@ -354,15 +241,30 @@ font-size:20px;
 font-size:14px;
 }
 
+/* MENÚ */
 .main-nav{
 flex-direction:column;
 gap:12px;
+width:100%;
 }
 
 nav a{
 margin:0;
 }
 
+/* MENÚ DESPLEGABLE */
+.dropdown{
+width:100%;
+}
+
+.dropdown-content{
+position:relative;
+top:10px;
+right:auto;
+width:100%;
+}
+
+/* HERO */
 .hero{
 padding:40px 20px;
 text-align:center;
@@ -376,8 +278,25 @@ font-size:26px;
 font-size:16px;
 }
 
+/* SECCIONES */
 section{
 padding:50px 20px;
+}
+
+/* SERVICIOS */
+.services{
+grid-template-columns:1fr;
+}
+
+/* PROCESO */
+.process{
+grid-template-columns:1fr;
+}
+
+/* BOTONES */
+.btn{
+width:100%;
+text-align:center;
 }
 
 }
