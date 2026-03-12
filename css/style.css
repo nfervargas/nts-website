@@ -277,3 +277,49 @@ width:35px;
 #menu-servicios:checked + .dropdown-content{
 display:block;
 }
+/* =====================
+   MODO CELULAR (AGREGAR)
+===================== */
+
+@media (max-width:768px){
+
+header{
+flex-direction:column;
+align-items:center;
+padding:20px;
+}
+
+.logo{
+flex-direction:column;
+margin-top:0;
+text-align:center;
+}
+
+.logo img{
+height:150px;
+}
+
+.main-nav{
+flex-direction:column;
+gap:15px;
+margin-top:20px;
+}
+
+.hero{
+padding:40px 20px;
+text-align:center;
+}
+
+.hero h2{
+font-size:28px;
+}
+
+.hero p{
+font-size:16px;
+}
+
+section{
+padding:50px 20px;
+}
+
+}
