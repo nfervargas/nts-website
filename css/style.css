@@ -47,7 +47,7 @@ header {
 }
 /* Asegura que el contenido esté sobre el overlay */
 header * {
-    position: center;
+    position: relative;
     z-index: 1;
 }
 
