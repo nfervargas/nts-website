@@ -277,6 +277,9 @@ width:35px;
 #menu-servicios:checked + .dropdown-content{
 display:block;
 }
+.dropdown:hover .dropdown-content{
+display:block;
+}
 /* =====================
    MODO CELULAR (AGREGAR)
 ===================== */
