@@ -87,7 +87,6 @@ header * {
     gap: 80px; /* ⬅ separación IGUAL para todos */
 }
 nav a {
-    margin-left: 100px;
     text-decoration: none;
     color: #030c2f;
     font-weight: 500;
