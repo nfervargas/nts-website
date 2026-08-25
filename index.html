@@ -2,158 +2,248 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>NTS – Network Technical Solutions</title>
+    <title>NTS – Network Technical Solutions | Infraestructura, seguridad y TI</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     
-    <!-- GOOGLE ANALYTICS -->
-    <span style="color:green;">
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2E76ZJ5862"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-2E76ZJ5862');
-    </script>
-    </span>
+    <meta name="description" content="Soluciones de infraestructura tecnológica, seguridad electrónica, administración de TI y servicios locativos para empresas en Colombia. Profesionales con calor humano.">
+    <link rel="canonical" href="https://ntssas.com/index.html">
 
-    <!-- CSS externo -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="NTS – Network Technical Solutions | Infraestructura, seguridad y TI">
+    <meta property="og:description" content="Soluciones de infraestructura tecnológica, seguridad electrónica, administración de TI y servicios locativos para empresas en Colombia. Profesionales con calor humano.">
+    <meta property="og:image" content="https://ntssas.com/img/og-image.webp">
+    <meta property="og:url" content="https://ntssas.com/index.html">
+    <meta property="og:locale" content="es_CO">
+    <meta property="og:site_name" content="NTS &ndash; Network Technical Solutions">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="NTS – Network Technical Solutions | Infraestructura, seguridad y TI">
+    <meta name="twitter:description" content="Soluciones de infraestructura tecnológica, seguridad electrónica, administración de TI y servicios locativos para empresas en Colombia. Profesionales con calor humano.">
+    <meta name="twitter:image" content="https://ntssas.com/img/og-image.webp">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/analytics.js"></script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "NTS \u2013 Network Technical Solutions S.A.S",
+      "image": "https://ntssas.com/img/og-image.webp",
+      "url": "https://ntssas.com/",
+      "telephone": "+57-320-916-5739",
+      "email": "comercial.ntssas@gmail.com",
+      "taxID": "902041949-1",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Cra 105a # 130d - 54",
+        "addressLocality": "Bogot\u00e1",
+        "addressRegion": "Bogot\u00e1 D.C.",
+        "addressCountry": "CO"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "08:00",
+          "closes": "18:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Saturday"],
+          "opens": "08:00",
+          "closes": "13:00"
+        }
+      ],
+      "sameAs": []
+    }
+    </script>
 </head>
 
 <body>
+<canvas id="fondo-red" aria-hidden="true"></canvas>
 
-    <!-- HEADER -->
-   <header>
+<header>
+    <figure class="logo">
+        <img src="img/logo-nts.webp" alt="Logo NTS – Network Technical Solutions" width="220" height="220">
+        <figcaption class="logo-text">
+            <p class="brand-name">NTS &ndash; Network Technical Solutions</p>
+            <p>Profesionales a su servicio, con el calor humano que nos distingue</p>
+        </figcaption>
+    </figure>
 
-<div class="logo">
-<img src="img/logo-nts.png" alt="Logo NTS">
-
-<div class="logo-text">
-<h1>Network Technical Solutions</h1>
-<p>Profesionales a su servicio, con el calor humano que nos distingue</p>
-</div>
-</div>
-
-<nav class="main-nav">
-
-<a href="index.html">Inicio</a>
-
-<a href="quienes-somos.html">Quiénes somos</a>
-
-<div class="dropdown">
-
-<label for="menu-servicios">Servicios</label>
-
-<input type="checkbox" id="menu-servicios">
-
-<div class="dropdown-content">
-
-<a href="servicios-infraestructura.html">Infraestructura Tecnológica</a>
-
-<a href="servicios-seguridad-electronica.html">Seguridad Electrónica</a>
-
-<a href="servicios-administracion-ti.html">Administración de TI</a>
-
-<a href="servicios-locativos.html">Servicios Locativos</a>
-
-</div>
-
-</div>
-
-<a href="contacto.html">Contacto</a>
-
-</nav>
-
+    <nav class="main-nav">
+    <ul>
+        <li><a href="index.html" aria-current="page">Inicio</a></li>
+        <li><a href="quienes-somos.html">Quiénes somos</a></li>
+            <li class="dropdown">
+            <button type="button" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false" id="menu-servicios-btn">
+                Servicios <span class="chevron" aria-hidden="true">&#9662;</span>
+            </button>
+            <ul class="dropdown-content" role="menu" aria-labelledby="menu-servicios-btn">
+                    <li role="none"><a role="menuitem" href="servicios-infraestructura.html">Infraestructura Tecnológica</a></li>
+                    <li role="none"><a role="menuitem" href="servicios-seguridad-electronica.html">Seguridad Electrónica</a></li>
+                    <li role="none"><a role="menuitem" href="servicios-administracion-ti.html">Administración de TI</a></li>
+                    <li role="none"><a role="menuitem" href="servicios-locativos.html">Servicios Locativos</a></li>
+                </ul>
+        </li>
+        <li><a href="contacto.html">Contacto</a></li>
+    
+    </ul>
+    </nav>
 </header>
 
-    <!-- HERO -->
-    <section class="hero">
-        <h2>Soluciones tecnológicas, administrativas y locativas para su empresa</h2>
-        <p>
-            En NTS acompañamos a nuestros clientes con un enfoque humano, profesional
-            y orientado a resultados, ofreciendo soluciones confiables y a la medida.
-        </p>
-        <a href="servicios-infraestructura.html" class="btn">Conozca nuestras soluciones</a>
-    </section>
+<main>
 
-    <!-- SERVICIOS -->
+<!-- HERO -->
+<section class="hero">
+    <p class="eyebrow">Soluciones tecnológicas para empresas</p>
+    <h1>Soluciones tecnol&oacute;gicas, administrativas y locativas para su empresa</h1>
+    <p>
+        En NTS acompa&ntilde;amos a nuestros clientes con un enfoque humano, profesional
+        y orientado a resultados, ofreciendo soluciones confiables y a la medida.
+    </p>
+    <a href="servicios-infraestructura.html" class="btn">Conozca nuestras soluciones</a>
+
+    <figure class="hero-visual">
+        <img src="img/foto-corporativa-2.webp" alt="Equipo de NTS en oficina" width="1400" height="933" loading="eager" fetchpriority="high">
+        <figcaption>Bogotá, Colombia</figcaption>
+    </figure>
+</section>
+
+<!-- SERVICIOS -->
+<section class="services-grid">
+    <h2 class="section-title">Nuestras soluciones</h2>
+
+    <article class="service-box">
+            <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5" cy="6" r="2.4"/><circle cx="19" cy="6" r="2.4"/><circle cx="12" cy="18" r="2.4"/><path d="M7 7.2 10.3 16M17 7.2 13.7 16M7.4 6h9.2"/></svg>
+            <h3>Infraestructura Tecnol&oacute;gica</h3>
+            <p>
+                Dise&ntilde;o, instalaci&oacute;n y mantenimiento de redes, cableado estructurado
+                y soluciones tecnol&oacute;gicas que soportan la operaci&oacute;n de su negocio.
+            </p>
+        </article>
+
+        <article class="service-box">
+            <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 4.4-3 7.6-7 9-4-1.4-7-4.6-7-9V6l7-3z"/><circle cx="12" cy="11" r="2.4"/></svg>
+            <h3>Seguridad Electr&oacute;nica</h3>
+            <p>
+                Videovigilancia, control de acceso, alarmas y sensores para proteger
+                personas, activos e instalaciones.
+            </p>
+        </article>
+
+        <article class="service-box">
+            <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="6" rx="1.2"/><rect x="4" y="14" width="16" height="6" rx="1.2"/><circle cx="8" cy="7" r="0.9" fill="currentColor" stroke="none"/><circle cx="8" cy="17" r="0.9" fill="currentColor" stroke="none"/></svg>
+            <h3>Administraci&oacute;n de TI</h3>
+            <p>
+                Gesti&oacute;n integral de sistemas, soporte t&eacute;cnico, seguridad,
+                respaldos y acompa&ntilde;amiento continuo para su infraestructura tecnol&oacute;gica.
+            </p>
+        </article>
+
+        <article class="service-box">
+            <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a3.5 3.5 0 0 0-4.6 4.2L4 16.6V20h3.4l6.1-6.1a3.5 3.5 0 0 0 4.2-4.6l-2.6 2.6-2-2 2.6-2.6z"/></svg>
+            <h3>Servicios Locativos</h3>
+            <p>
+                Soluciones el&eacute;ctricas, plomer&iacute;a y adecuaciones locativas
+                para el correcto funcionamiento de sus espacios.
+            </p>
+        </article></section>
+
+<!-- PROCESO -->
+<section>
+    <h2 class="section-title">C&oacute;mo trabajamos</h2>
+
+    <ol class="process">
+    <li class="process-step">
+            <span class="step-number">1</span>
+            <h3>Diagn&oacute;stico</h3>
+            <p>Analizamos su necesidad t&eacute;cnica o locativa.</p>
+        </li>
+
+        <li class="process-step">
+            <span class="step-number">2</span>
+            <h3>Propuesta</h3>
+            <p>Presentamos una soluci&oacute;n clara y ajustada.</p>
+        </li>
+
+        <li class="process-step">
+            <span class="step-number">3</span>
+            <h3>Implementaci&oacute;n</h3>
+            <p>Ejecutamos con calidad, orden y seguridad.</p>
+        </li>
+
+        <li class="process-step">
+            <span class="step-number">4</span>
+            <h3>Acompa&ntilde;amiento</h3>
+            <p>Brindamos soporte y mejora continua.</p>
+        </li></ol>
+</section>
+
+<!-- CONTACTO RÁPIDO -->
+<aside aria-labelledby="contacto-rapido-titulo">
+    <h2 id="contacto-rapido-titulo" class="section-title">&iquest;Prefiere hablar directo con nosotros?</h2>
+    <p>Escr&iacute;banos por WhatsApp o ll&aacute;menos y le respondemos el mismo d&iacute;a h&aacute;bil.</p>
+    <ul class="quick-contact">
+        <li><a href="tel:+573215855417">+57 321 585 5417</a></li>
+        <li><a href="https://wa.me/573215855417?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20los%20servicios%20de%20NTS" target="_blank" rel="noopener noreferrer">Escribir por WhatsApp</a></li>
+    </ul>
+</aside>
+
+<!-- CTA -->
+<section class="cta">
+    <h2>&iquest;Necesita una soluci&oacute;n confiable?</h2>
+    <a href="contacto.html" class="btn btn--amber">Cont&aacute;ctenos</a>
+</section>
+
+</main>
+
+<footer>
     <section>
-        <h2 class="section-title">Nuestras soluciones</h2>
-
-        <div class="services">
-            <div class="service-box">
-                <h3>Infraestructura Tecnológica</h3>
-                <p>
-                    Diseño, instalación y mantenimiento de redes, cableado estructurado
-                    y soluciones tecnológicas que soportan la operación de su negocio.
-                </p>
-            </div>
-
-            <div class="service-box">
-                <h3>Administración de TI</h3>
-                <p>
-                    Gestión integral de sistemas, soporte técnico, seguridad,
-                    respaldos y acompañamiento continuo para su infraestructura tecnológica.
-                </p>
-            </div>
-
-            <div class="service-box">
-                <h3>Servicios Locativos</h3>
-                <p>
-                    Soluciones eléctricas, plomería y adecuaciones locativas
-                    para el correcto funcionamiento de sus espacios.
-                </p>
-            </div>
-        </div>
+        <h3>NTS &ndash; Network Technical Solutions S.A.S.</h3>
+        <address>
+            <p>NIT 902041949-1</p>
+            <p>Cra 105a # 130d - 54, Bogot&aacute;, Colombia</p>
+        </address>
     </section>
-
-    <!-- PROCESO -->
     <section>
-        <h2 class="section-title">Cómo trabajamos</h2>
-
-        <div class="process">
-            <div class="process-step">
-                <h4>Diagnóstico</h4>
-                <p>Analizamos su necesidad técnica o locativa.</p>
-            </div>
-
-            <div class="process-step">
-                <h4>Propuesta</h4>
-                <p>Presentamos una solución clara y ajustada.</p>
-            </div>
-
-            <div class="process-step">
-                <h4>Implementación</h4>
-                <p>Ejecutamos con calidad, orden y seguridad.</p>
-            </div>
-
-            <div class="process-step">
-                <h4>Acompañamiento</h4>
-                <p>Brindamos soporte y mejora continua.</p>
-            </div>
-        </div>
+        <h3>Contacto</h3>
+        <address>
+            <p><a href="tel:+573215855417">+57 321 585 5417</a></p>
+            <p><a href="mailto:comercial.ntssas@gmail.com">comercial.ntssas@gmail.com</a></p>
+            <p>Lun a vie: 8:00 a.m. &ndash; 6:00 p.m. &middot; S&aacute;b: 8:00 a.m. &ndash; 1:00 p.m.</p>
+        </address>
     </section>
+    <nav aria-label="Enlaces del pie de p&aacute;gina">
+        <h3>Enlaces</h3>
+        <p><a href="quienes-somos.html">Qui&eacute;nes somos</a></p>
+        <p><a href="contacto.html">Contacto</a></p>
+        <p><a href="politica-tratamiento-datos.html">Pol&iacute;tica de tratamiento de datos personales</a></p>
+    </nav>
+    <p class="footer-bottom">
+        &copy; 2026 NTS &ndash; Network Technical Solutions S.A.S. Todos los derechos reservados.
+    </p>
+</footer>
 
-    <!-- CTA -->
-    <section class="cta">
-        <h2>¿Necesita una solución confiable?</h2>
-        <a href="contacto.html" class="btn">Contáctenos</a>
-    </section>
+<a href="https://wa.me/573215855417?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20los%20servicios%20de%20NTS"
+   class="whatsapp"
+   target="_blank"
+   rel="noopener"
+   aria-label="Escribir por WhatsApp">
+    <img src="img/chat-icon.svg" width="32" height="32" alt="" aria-hidden="true">
+</a>
 
-    <!-- FOOTER -->
-    <footer>
-        © 2026 NTS – Network Technical Solutions
-    </footer>
-
-    <!-- BOTÓN DE WHATSAPP (AGREGAR AQUÍ) -->
-    <a href="https://wa.me/573209165739?text=Hola,%20quiero%20información%20sobre%20los%20servicios%20de%20NTS" 
-       class="whatsapp" 
-       target="_blank">
-       <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" width="35">
-    </a>
-    <!-- FIN BOTÓN WHATSAPP -->
-
+<script src="js/fondo-red.js" defer></script>
+<script src="js/nav.js"></script>
 </body>
 </html>
-

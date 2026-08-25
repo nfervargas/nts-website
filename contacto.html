@@ -2,131 +2,282 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Contacto | NTS</title>
+    <title>Contacto | NTS – Network Technical Solutions</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Comuníquese con NTS para solicitar asesoría en infraestructura tecnológica, seguridad electrónica, TI o servicios locativos. Teléfono, correo y formulario de contacto.">
+    <link rel="canonical" href="https://ntssas.com/contacto.html">
 
-    <!-- GOOGLE ANALYTICS -->
-    <span style="color:green;">
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2E76ZJ5862"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-2E76ZJ5862');
+    <link rel="icon" href="img/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Contacto | NTS – Network Technical Solutions">
+    <meta property="og:description" content="Comuníquese con NTS para solicitar asesoría en infraestructura tecnológica, seguridad electrónica, TI o servicios locativos. Teléfono, correo y formulario de contacto.">
+    <meta property="og:image" content="https://ntssas.com/img/og-image.webp">
+    <meta property="og:url" content="https://ntssas.com/contacto.html">
+    <meta property="og:locale" content="es_CO">
+    <meta property="og:site_name" content="NTS &ndash; Network Technical Solutions">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Contacto | NTS – Network Technical Solutions">
+    <meta name="twitter:description" content="Comuníquese con NTS para solicitar asesoría en infraestructura tecnológica, seguridad electrónica, TI o servicios locativos. Teléfono, correo y formulario de contacto.">
+    <meta name="twitter:image" content="https://ntssas.com/img/og-image.webp">
+    <script src="js/contact-form.js" defer></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/analytics.js"></script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "NTS \u2013 Network Technical Solutions S.A.S",
+      "image": "https://ntssas.com/img/og-image.webp",
+      "url": "https://ntssas.com/",
+      "telephone": "+57-321-585-5417",
+      "email": "comercial.ntssas@gmail.com",
+      "taxID": "902041949-1",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Cra 105a # 130d - 54",
+        "addressLocality": "Bogot\u00e1",
+        "addressRegion": "Bogot\u00e1 D.C.",
+        "addressCountry": "CO"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "08:00",
+          "closes": "18:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Saturday"],
+          "opens": "08:00",
+          "closes": "13:00"
+        }
+      ],
+      "sameAs": []
+    }
     </script>
-    </span>
-    
-    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
+<canvas id="fondo-red" aria-hidden="true"></canvas>
 
-<!-- ================= HEADER ================= -->
 <header>
-    <div class="logo">
-        <img src="img/logo-nts.png" alt="Logo NTS">
-        <div class="logo-text">
-            <h1>Network Technical Solutions</h1>
+    <figure class="logo">
+        <img src="img/logo-nts.webp" alt="Logo NTS – Network Technical Solutions" width="220" height="220">
+        <figcaption class="logo-text">
+            <p class="brand-name">NTS &ndash; Network Technical Solutions</p>
             <p>Profesionales a su servicio, con el calor humano que nos distingue</p>
-        </div>
-    </div>
+        </figcaption>
+    </figure>
 
-     <nav class="main-nav">
-    <a href="index.html">Inicio</a>
-    <a href="quienes-somos.html">Quiénes somos</a>
-
-    <div class="dropdown">
-    <input type="checkbox" id="menu-servicios">
-    <label for="menu-servicios">Servicios</label>
-
-    <div class="dropdown-content">
-        <a href="servicios-infraestructura.html">Infraestructura Tecnológica</a>
-        <a href="servicios-seguridad-electronica.html">Seguridad Electrónica</a>
-        <a href="servicios-administracion-ti.html">Administración de TI</a>
-        <a href="servicios-locativos.html">Servicios Locativos</a>
-    </div>
-</div>
-
-    <a href="contacto.html">Contacto</a>
-     </nav>
+    <nav class="main-nav">
+    <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="quienes-somos.html">Quiénes somos</a></li>
+            <li class="dropdown">
+            <button type="button" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false" id="menu-servicios-btn">
+                Servicios <span class="chevron" aria-hidden="true">&#9662;</span>
+            </button>
+            <ul class="dropdown-content" role="menu" aria-labelledby="menu-servicios-btn">
+                    <li role="none"><a role="menuitem" href="servicios-infraestructura.html">Infraestructura Tecnológica</a></li>
+                    <li role="none"><a role="menuitem" href="servicios-seguridad-electronica.html">Seguridad Electrónica</a></li>
+                    <li role="none"><a role="menuitem" href="servicios-administracion-ti.html">Administración de TI</a></li>
+                    <li role="none"><a role="menuitem" href="servicios-locativos.html">Servicios Locativos</a></li>
+                </ul>
+        </li>
+        <li><a href="contacto.html" aria-current="page">Contacto</a></li>
+    
+    </ul>
+    </nav>
 </header>
 
-<!-- ================= HERO ================= -->
+<main>
+
+<!-- HERO -->
 <section class="hero">
-    <h2>Contacto</h2>
+    <p class="eyebrow">Hablemos</p>
+    <h1>Contacto</h1>
     <p>
         Estamos listos para atender sus requerimientos y brindarle
         soluciones confiables y oportunas.
     </p>
 </section>
 
-<!-- ================= CONTACTO ================= -->
+<!-- CONTACTO -->
 <section>
-    <h2 class="section-title">Contáctenos</h2>
+    <h2 class="section-title">Cont&aacute;ctenos</h2>
 
-    <div class="services">
+    <ul class="contact-cards">
+        <li class="contact-card">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <h3>Tel&eacute;fono</h3>
+            <p><a href="tel:+573215855417">+57 321 585 5417</a></p>
+        </li>
+        <li class="contact-card">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v16H4z" stroke="none"/><path d="M22 6 12 13 2 6"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
+            <h3>Correo</h3>
+            <p><a href="mailto:comercial.ntssas@gmail.com">comercial.ntssas@gmail.com</a></p>
+        </li>
+        <li class="contact-card">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            <h3>Horario</h3>
+            <p>Lun a vie: 8:00 a.m. &ndash; 6:00 p.m.</p>
+            <p>S&aacute;b: 8:00 a.m. &ndash; 1:00 p.m.</p>
+        </li>
+        <li class="contact-card">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <h3>Direcci&oacute;n</h3>
+            <p>Cra 105a # 130d - 54, Bogot&aacute;</p>
+        </li>
+    </ul>
 
-        <!-- DATOS -->
-        <div class="service-box">
-            <h3>Información de contacto</h3>
-
-            <p><strong>Empresa:</strong> NTS – Network Technical Solutions</p>
-
-            <p><strong>Correo:</strong> 
-            <a href="mailto:comercial.ntssas@gmail.com">comercial.ntssas@gmail.com</a>
-            </p>
-
-            <p><strong>Teléfono:</strong> 
-            <a href="tel:+573209165739">+57 320 916 5739</a>
-            </p>
-
-            <p><strong>Horario:</strong> Lunes a viernes – 8:00 a.m. a 6:00 p.m.</p>
-            <p>Sábado – 8:00 a.m. a 1:00 p.m.</p>
-
-            <p>
-                Atendemos requerimientos tecnológicos y locativos
-                con rapidez, compromiso y atención personalizada.
-            </p>
-        </div>
-
-        <!-- FORMULARIO -->
-        <div class="service-box">
-            <h3>Comunícate con Nosotros</h3>
-
-            <form class="contact-form" action="https://formspree.io/f/mgonoewr" method="POST">
-
-                <input type="text" name="nombre" placeholder="Nombre completo" required>
-
-                <input type="email" name="email" placeholder="Correo electrónico" required>
-
-                <input type="text" name="telefono" placeholder="Teléfono">
-
-                <textarea name="mensaje" placeholder="Mensaje" rows="5" required></textarea>
-
-                <button type="submit" class="btn">Enviar mensaje</button>
-
-            </form>
-        </div>
-
-    </div>
+    <iframe
+        class="map-embed"
+        title="Ubicaci&oacute;n de NTS &ndash; Network Technical Solutions"
+        src="https://www.google.com/maps?q=Cra+105a+%23+130d+-+54%2C+Bogot%C3%A1%2C+Colombia&output=embed"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
 </section>
-<!-- ================= CTA ================= -->
+
+<!-- HORARIO DETALLADO -->
+<aside aria-labelledby="horario-titulo">
+    <h2 id="horario-titulo" class="section-title">Horario de atenci&oacute;n detallado</h2>
+    <p class="schedule-caption">D&iacute;as y horas en que puede contactarnos</p>
+    <dl class="schedule-list">
+        <dt>Lunes a viernes</dt>
+        <dd>8:00 a.m. &ndash; 6:00 p.m.</dd>
+        <dt>S&aacute;bado</dt>
+        <dd>8:00 a.m. &ndash; 1:00 p.m.</dd>
+        <dt>Domingo y festivos</dt>
+        <dd>Cerrado</dd>
+    </dl>
+</aside>
+
+<!-- FORMULARIO Y PROCESO -->
+<section class="services-grid">
+    <h2 class="section-title">Env&iacute;anos tu solicitud</h2>
+
+    <article class="service-box">
+        <h3>Pr&oacute;ximos pasos</h3>
+        <ol class="process" style="grid-template-columns:1fr;">
+            <li class="process-step">
+                <span class="step-number" aria-hidden="true">1</span>
+                <h4>Recibimos tu mensaje</h4>
+                <p>Tu solicitud llega directamente a nuestro equipo comercial.</p>
+            </li>
+            <li class="process-step">
+                <span class="step-number" aria-hidden="true">2</span>
+                <h4>Te contactamos</h4>
+                <p>Un asesor de NTS te escribe o llama en menos de 24 horas h&aacute;biles.</p>
+            </li>
+            <li class="process-step">
+                <span class="step-number" aria-hidden="true">3</span>
+                <h4>Agendamos visita t&eacute;cnica</h4>
+                <p>Coordinamos una visita o reuni&oacute;n para entender a fondo tu necesidad.</p>
+            </li>
+        </ol>
+    </article>
+
+    <article class="service-box">
+        <h3>Comun&iacute;cate con nosotros</h3>
+
+        <form class="contact-form" action="https://formspree.io/f/mgonoewr" method="POST">
+
+            <p class="form-field">
+                <label for="nombre">Nombre completo</label>
+                <input type="text" id="nombre" name="nombre" required minlength="3">
+            </p>
+
+            <p class="form-field">
+                <label for="email">Correo electr&oacute;nico</label>
+                <input type="email" id="email" name="email" required>
+            </p>
+
+            <p class="form-field">
+                <label for="telefono">Tel&eacute;fono (opcional)</label>
+                <input type="tel" id="telefono" name="telefono">
+            </p>
+
+            <p class="form-field">
+                <label for="mensaje">Mensaje</label>
+                <textarea id="mensaje" name="mensaje" rows="5" required minlength="10"></textarea>
+            </p>
+
+            <!-- Honeypot anti-spam: campo oculto, invisible para personas -->
+            <p class="hp-field" aria-hidden="true">
+                <label for="sitio_web">No completar este campo</label>
+                <input type="text" id="sitio_web" name="sitio_web" tabindex="-1" autocomplete="off">
+            </p>
+
+            <label class="form-check">
+                <input type="checkbox" id="privacidad" name="privacidad" required>
+                <span>He le&iacute;do y acepto la <a href="politica-tratamiento-datos.html" target="_blank" rel="noopener noreferrer">pol&iacute;tica de tratamiento de datos personales</a>.</span>
+            </label>
+
+            <button type="submit" class="btn">Enviar mensaje</button>
+            <p class="form-status" role="status" aria-live="polite"></p>
+        </form>
+    </article>
+
+</section>
+
+<!-- CTA -->
 <section class="cta">
-    <h2>Un asesor de NTS está listo para atenderle</h2>
-    <a href="index.html" class="btn">Volver al inicio</a>
+    <h2>Un asesor de NTS est&aacute; listo para atenderle</h2>
+    <a href="index.html" class="btn btn--amber">Volver al inicio</a>
 </section>
 
-<!-- ================= FOOTER ================= -->
-<footer>
-    © 2026 NTS – Network Technical Solutions
-</footer>
-    
-    <!-- BOTÓN DE WHATSAPP (AGREGAR AQUÍ) -->
-<a href="https://wa.me/573209165739" class="whatsapp" target="_blank">
-<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
-</a>
-<!-- FIN BOTÓN -->
+</main>
 
+<footer>
+    <section>
+        <h3>NTS &ndash; Network Technical Solutions S.A.S.</h3>
+        <address>
+            <p>NIT 902041949-1</p>
+            <p>Cra 105a # 130d - 54, Bogot&aacute;, Colombia</p>
+        </address>
+    </section>
+    <section>
+        <h3>Contacto</h3>
+        <address>
+            <p><a href="tel:+573215855417">+57 321 585 5417</a></p>
+            <p><a href="mailto:comercial.ntssas@gmail.com">comercial.ntssas@gmail.com</a></p>
+            <p>Lun a vie: 8:00 a.m. &ndash; 6:00 p.m. &middot; S&aacute;b: 8:00 a.m. &ndash; 1:00 p.m.</p>
+        </address>
+    </section>
+    <nav aria-label="Enlaces del pie de p&aacute;gina">
+        <h3>Enlaces</h3>
+        <p><a href="quienes-somos.html">Qui&eacute;nes somos</a></p>
+        <p><a href="contacto.html">Contacto</a></p>
+        <p><a href="politica-tratamiento-datos.html">Pol&iacute;tica de tratamiento de datos personales</a></p>
+    </nav>
+    <p class="footer-bottom">
+        &copy; 2026 NTS &ndash; Network Technical Solutions S.A.S. Todos los derechos reservados.
+    </p>
+</footer>
+
+<a href="https://wa.me/573215855417?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20los%20servicios%20de%20NTS"
+   class="whatsapp"
+   target="_blank"
+   rel="noopener"
+   aria-label="Escribir por WhatsApp">
+    <img src="img/chat-icon.svg" width="32" height="32" alt="" aria-hidden="true">
+</a>
+
+<script src="js/fondo-red.js" defer></script>
+<script src="js/nav.js"></script>
 </body>
 </html>

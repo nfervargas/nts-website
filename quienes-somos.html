@@ -2,151 +2,202 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Quiénes Somos | NTS</title>
+    <title>Quiénes Somos | NTS – Network Technical Solutions</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Conozca a NTS – Network Technical Solutions: misión, visión, valores y el enfoque humano y profesional detrás de nuestras soluciones tecnológicas y locativas.">
+    <link rel="canonical" href="https://ntssas.com/quienes-somos.html">
 
-    <!-- GOOGLE ANALYTICS -->
-    <span style="color:green;">
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2E76ZJ5862"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-2E76ZJ5862');
-    </script>
-    </span>
+    <link rel="icon" href="img/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 
-    <link rel="stylesheet" href="css/style.css">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Quiénes Somos | NTS – Network Technical Solutions">
+    <meta property="og:description" content="Conozca a NTS – Network Technical Solutions: misión, visión, valores y el enfoque humano y profesional detrás de nuestras soluciones tecnológicas y locativas.">
+    <meta property="og:image" content="https://ntssas.com/img/og-image.webp">
+    <meta property="og:url" content="https://ntssas.com/quienes-somos.html">
+    <meta property="og:locale" content="es_CO">
+    <meta property="og:site_name" content="NTS &ndash; Network Technical Solutions">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Quiénes Somos | NTS – Network Technical Solutions">
+    <meta name="twitter:description" content="Conozca a NTS – Network Technical Solutions: misión, visión, valores y el enfoque humano y profesional detrás de nuestras soluciones tecnológicas y locativas.">
+    <meta name="twitter:image" content="https://ntssas.com/img/og-image.webp">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/analytics.js"></script>
 </head>
 
 <body>
+<canvas id="fondo-red" aria-hidden="true"></canvas>
 
-<!-- ================= HEADER ================= -->
 <header>
-    <div class="logo">
-        <img src="img/logo-nts.png" alt="Logo NTS">
-        <div class="logo-text">
-            <h1>NTS – Network Technical Solutions</h1>
+    <figure class="logo">
+        <img src="img/logo-nts.webp" alt="Logo NTS – Network Technical Solutions" width="220" height="220">
+        <figcaption class="logo-text">
+            <p class="brand-name">NTS &ndash; Network Technical Solutions</p>
             <p>Profesionales a su servicio, con el calor humano que nos distingue</p>
-        </div>
-    </div>
+        </figcaption>
+    </figure>
 
-     <nav class="main-nav">
-    <a href="index.html">Inicio</a>
-    <a href="quienes-somos.html">Quiénes somos</a>
-
-    <div class="dropdown">
-    <input type="checkbox" id="menu-servicios">
-    <label for="menu-servicios">Servicios</label>
-
-    <div class="dropdown-content">
-        <a href="servicios-infraestructura.html">Infraestructura Tecnológica</a>
-        <a href="servicios-seguridad-electronica.html">Seguridad Electrónica</a>
-        <a href="servicios-administracion-ti.html">Administración de TI</a>
-        <a href="servicios-locativos.html">Servicios Locativos</a>
-    </div>
-</div>
-
-    <a href="contacto.html">Contacto</a>
-     </nav>
+    <nav class="main-nav">
+    <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="quienes-somos.html" aria-current="page">Quiénes somos</a></li>
+            <li class="dropdown">
+            <button type="button" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false" id="menu-servicios-btn">
+                Servicios <span class="chevron" aria-hidden="true">&#9662;</span>
+            </button>
+            <ul class="dropdown-content" role="menu" aria-labelledby="menu-servicios-btn">
+                    <li role="none"><a role="menuitem" href="servicios-infraestructura.html">Infraestructura Tecnológica</a></li>
+                    <li role="none"><a role="menuitem" href="servicios-seguridad-electronica.html">Seguridad Electrónica</a></li>
+                    <li role="none"><a role="menuitem" href="servicios-administracion-ti.html">Administración de TI</a></li>
+                    <li role="none"><a role="menuitem" href="servicios-locativos.html">Servicios Locativos</a></li>
+                </ul>
+        </li>
+        <li><a href="contacto.html">Contacto</a></li>
+    
+    </ul>
+    </nav>
 </header>
 
-<!-- ================= HERO ================= -->
+<main>
+
+<!-- HERO -->
 <section class="hero">
-    <h2>Quiénes Somos</h2>
+    <p class="eyebrow">Sobre nosotros</p>
+    <h1>Qui&eacute;nes Somos</h1>
     <p>
-        En NTS trabajamos para brindar soluciones técnicas confiables,
+        En NTS trabajamos para brindar soluciones t&eacute;cnicas confiables,
         con un enfoque humano y profesional.
     </p>
+
+    <figure class="hero-visual">
+        <img src="img/foto-equipo.webp" alt="Equipo de trabajo de NTS" width="1400" height="933" loading="eager" fetchpriority="high">
+        <figcaption>Equipo NTS</figcaption>
+    </figure>
 </section>
 
-<!-- ================= CONTENIDO ================= -->
-<section>
+<!-- CONTENIDO -->
+<section class="services-grid">
     <h2 class="section-title">Nuestra empresa</h2>
 
-    <div class="services">
-
-        <div class="service-box">
-            <h3>¿Quién es NTS?</h3>
+    <article class="service-box">
+            <h3>&iquest;Qui&eacute;n es NTS?</h3>
             <p>
-                NTS – Network Technical Solutions es una empresa orientada
-                a la prestación de servicios tecnológicos y locativos,
+                NTS &ndash; Network Technical Solutions es una empresa orientada
+                a la prestaci&oacute;n de servicios tecnol&oacute;gicos y locativos,
                 enfocada en ofrecer soluciones eficientes, seguras y confiables.
             </p>
             <p>
-                Nuestro compromiso es acompañar a nuestros clientes
+                Nuestro compromiso es acompa&ntilde;ar a nuestros clientes
                 con profesionalismo, responsabilidad y el calor humano
                 que nos distingue.
             </p>
-        </div>
+        </article>
 
-        <div class="service-box">
+        <article class="service-box">
             <h3>Nuestro enfoque</h3>
             <p>
                 Trabajamos bajo un enfoque integral, entendiendo las
-                necesidades técnicas y operativas de cada cliente.
+                necesidades t&eacute;cnicas y operativas de cada cliente.
             </p>
             <p>
                 Ofrecemos soluciones personalizadas, soporte oportuno
-                y un acompañamiento continuo en cada proyecto.
+                y un acompa&ntilde;amiento continuo en cada proyecto.
             </p>
-        </div>
+        </article></section>
 
-    </div>
-</section>
+<!-- MISION / VISION / VALORES -->
+<section class="services-grid">
+    <h2 class="section-title">Misi&oacute;n, Visi&oacute;n y Valores</h2>
 
-<!-- ================= MISION / VISION / VALORES ================= -->
-<section>
-    <h2 class="section-title">Misión, Visión y Valores</h2>
-
-    <div class="services">
-
-        <div class="service-box">
-            <h3>Misión</h3>
+    <article class="service-box">
+            <h3>Misi&oacute;n</h3>
             <p>
-                Brindar soluciones tecnológicas y locativas de alta calidad,
+                Brindar soluciones tecnol&oacute;gicas y locativas de alta calidad,
                 garantizando continuidad operativa, seguridad y confianza
                 a nuestros clientes.
             </p>
-        </div>
+        </article>
 
-        <div class="service-box">
-            <h3>Visión</h3>
+        <article class="service-box">
+            <h3>Visi&oacute;n</h3>
             <p>
-                Ser una empresa reconocida por su excelencia técnica,
-                confiabilidad y enfoque humano en la prestación de servicios
+                Ser una empresa reconocida por su excelencia t&eacute;cnica,
+                confiabilidad y enfoque humano en la prestaci&oacute;n de servicios
                 a nivel empresarial.
             </p>
-        </div>
+        </article>
 
-        <div class="service-box">
+        <article class="service-box">
             <h3>Valores</h3>
             <p>
                 Profesionalismo, responsabilidad, compromiso,
-                honestidad, calidad en el servicio y cercanía con el cliente.
+                honestidad, calidad en el servicio y cercan&iacute;a con el cliente.
             </p>
-        </div>
+        </article></section>
 
-    </div>
-</section>
+<!-- DATOS RÁPIDOS -->
+<aside aria-labelledby="datos-rapidos-titulo">
+    <h2 id="datos-rapidos-titulo" class="section-title">Por qu&eacute; trabajar con NTS</h2>
+    <ul class="quick-facts">
+        <li>Atenci&oacute;n personalizada, de principio a fin del proyecto</li>
+        <li>Equipo t&eacute;cnico propio, sin subcontrataci&oacute;n</li>
+        <li>Respuesta a solicitudes en menos de 24 horas h&aacute;biles</li>
+    </ul>
+</aside>
 
-<!-- ================= CTA ================= -->
+<!-- CTA -->
 <section class="cta">
     <h2>Conozca una empresa comprometida con su tranquilidad</h2>
-    <a href="contacto.html" class="btn">Contáctenos</a>
+    <a href="contacto.html" class="btn btn--amber">Cont&aacute;ctenos</a>
 </section>
 
-<!-- ================= FOOTER ================= -->
-<footer>
-    © 2026 NTS – Network Technical Solutions
-</footer>       
-    
-<!-- BOTÓN DE WHATSAPP (AGREGAR AQUÍ) -->
-<a href="https://wa.me/573209165739" class="whatsapp" target="_blank">
-<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
-</a>
-<!-- FIN BOTÓN -->
+</main>
 
+<footer>
+    <section>
+        <h3>NTS &ndash; Network Technical Solutions S.A.S.</h3>
+        <address>
+            <p>NIT 902041949-1</p>
+            <p>Cra 105a # 130d - 54, Bogot&aacute;, Colombia</p>
+        </address>
+    </section>
+    <section>
+        <h3>Contacto</h3>
+        <address>
+            <p><a href="tel:+573215855417">+57 321 585 5417</a></p>
+            <p><a href="mailto:comercial.ntssas@gmail.com">comercial.ntssas@gmail.com</a></p>
+            <p>Lun a vie: 8:00 a.m. &ndash; 6:00 p.m. &middot; S&aacute;b: 8:00 a.m. &ndash; 1:00 p.m.</p>
+        </address>
+    </section>
+    <nav aria-label="Enlaces del pie de p&aacute;gina">
+        <h3>Enlaces</h3>
+        <p><a href="quienes-somos.html">Qui&eacute;nes somos</a></p>
+        <p><a href="contacto.html">Contacto</a></p>
+        <p><a href="politica-tratamiento-datos.html">Pol&iacute;tica de tratamiento de datos personales</a></p>
+    </nav>
+    <p class="footer-bottom">
+        &copy; 2026 NTS &ndash; Network Technical Solutions S.A.S. Todos los derechos reservados.
+    </p>
+</footer>
+
+<a href="https://wa.me/573215855417?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20los%20servicios%20de%20NTS"
+   class="whatsapp"
+   target="_blank"
+   rel="noopener"
+   aria-label="Escribir por WhatsApp">
+    <img src="img/chat-icon.svg" width="32" height="32" alt="" aria-hidden="true">
+</a>
+
+<script src="js/fondo-red.js" defer></script>
+<script src="js/nav.js"></script>
 </body>
 </html>

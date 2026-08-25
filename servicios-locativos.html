@@ -4,129 +4,153 @@
     <meta charset="UTF-8">
     <title>Servicios Locativos | NTS</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Electricidad, plomería y arreglos locativos generales para el mantenimiento y correcto funcionamiento de sus espacios comerciales o empresariales.">
+    <link rel="canonical" href="https://ntssas.com/servicios-locativos.html">
 
-    <!-- GOOGLE ANALYTICS -->
-    <span style="color:green;">
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2E76ZJ5862"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-2E76ZJ5862');
-    </script>
-    </span>
+    <link rel="icon" href="img/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 
-    <link rel="stylesheet" href="css/style.css">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Servicios Locativos | NTS">
+    <meta property="og:description" content="Electricidad, plomería y arreglos locativos generales para el mantenimiento y correcto funcionamiento de sus espacios comerciales o empresariales.">
+    <meta property="og:image" content="https://ntssas.com/img/og-image.webp">
+    <meta property="og:url" content="https://ntssas.com/servicios-locativos.html">
+    <meta property="og:locale" content="es_CO">
+    <meta property="og:site_name" content="NTS &ndash; Network Technical Solutions">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Servicios Locativos | NTS">
+    <meta name="twitter:description" content="Electricidad, plomería y arreglos locativos generales para el mantenimiento y correcto funcionamiento de sus espacios comerciales o empresariales.">
+    <meta name="twitter:image" content="https://ntssas.com/img/og-image.webp">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/analytics.js"></script>
 </head>
 
 <body>
+<canvas id="fondo-red" aria-hidden="true"></canvas>
 
-<!-- ================= HEADER ================= -->
 <header>
-    <div class="logo">
-        <img src="img/logo-nts.png" alt="Logo NTS">
-        <div class="logo-text">
-            <h1>NTS – Network Technical Solutions</h1>
+    <figure class="logo">
+        <img src="img/logo-nts.webp" alt="Logo NTS – Network Technical Solutions" width="220" height="220">
+        <figcaption class="logo-text">
+            <p class="brand-name">NTS &ndash; Network Technical Solutions</p>
             <p>Profesionales a su servicio, con el calor humano que nos distingue</p>
-        </div>
-    </div>
+        </figcaption>
+    </figure>
 
-     <nav class="main-nav">
-    <a href="index.html">Inicio</a>
-    <a href="quienes-somos.html">Quiénes somos</a>
-
-    <div class="dropdown">
-    <input type="checkbox" id="menu-servicios">
-    <label for="menu-servicios">Servicios</label>
-
-    <div class="dropdown-content">
-        <a href="servicios-infraestructura.html">Infraestructura Tecnológica</a>
-        <a href="servicios-seguridad-electronica.html">Seguridad Electrónica</a>
-        <a href="servicios-administracion-ti.html">Administración de TI</a>
-        <a href="servicios-locativos.html">Servicios Locativos</a>
-    </div>
-</div>
-
-    <a href="contacto.html">Contacto</a>
-     </nav>
+    <nav class="main-nav">
+    <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="quienes-somos.html">Quiénes somos</a></li>
+            <li class="dropdown">
+            <button type="button" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false" id="menu-servicios-btn" aria-current="true">
+                Servicios <span class="chevron" aria-hidden="true">&#9662;</span>
+            </button>
+            <ul class="dropdown-content" role="menu" aria-labelledby="menu-servicios-btn">
+                    <li role="none"><a role="menuitem" href="servicios-infraestructura.html">Infraestructura Tecnológica</a></li>
+                    <li role="none"><a role="menuitem" href="servicios-seguridad-electronica.html">Seguridad Electrónica</a></li>
+                    <li role="none"><a role="menuitem" href="servicios-administracion-ti.html">Administración de TI</a></li>
+                </ul>
+        </li>
+        <li><a href="contacto.html">Contacto</a></li>
+    
+    </ul>
+    </nav>
 </header>
 
-<!-- ================= HERO ================= -->
+<main>
+
+<!-- HERO -->
 <section class="hero">
-    <h2>Servicios Locativos</h2>
-    <p>
-        Soluciones técnicas para el mantenimiento, adecuación
-        y correcto funcionamiento de sus espacios físicos.
-    </p>
+    <p class="eyebrow">Servicio · Locativos</p>
+    <h1>Servicios Locativos</h1>
+    <p>Soluciones t&eacute;cnicas para el mantenimiento, adecuaci&oacute;n y correcto funcionamiento de sus espacios f&iacute;sicos.</p>
+
+    <figure class="hero-visual">
+        <img src="img/servicios-locativos.webp" alt="Adecuación locativa realizada por NTS" width="1400" height="933" loading="eager" fetchpriority="high">
+        <figcaption>Mantenimiento locativo</figcaption>
+    </figure>
 </section>
 
-<!-- ================= SERVICIOS ================= -->
-<section>
+<!-- CONTENIDO -->
+<section class="services-grid">
     <h2 class="section-title">Nuestros servicios locativos</h2>
 
-    <div class="services">
+    <article class="service-box">
+                <h3>Electricidad</h3>
+                <p>Servicios el&eacute;ctricos para instalaciones comerciales, empresariales e institucionales.</p><p>Instalaci&oacute;n y mantenimiento de redes el&eacute;ctricas, luminarias, tomas, tableros el&eacute;ctricos y correcci&oacute;n de fallas.</p>
+            </article>
+            <article class="service-box">
+                <h3>Plomer&iacute;a</h3>
+                <p>Soluciones para sistemas hidr&aacute;ulicos y sanitarios en edificaciones.</p><p>Reparaci&oacute;n de fugas, instalaci&oacute;n de tuber&iacute;as, mantenimiento de redes sanitarias y destape de tuber&iacute;as con sonda manual y el&eacute;ctrica.</p>
+            </article>
+            <article class="service-box">
+                <h3>Arreglos Locativos Generales</h3>
+                <p>Adecuaciones y reparaciones menores para conservar y mejorar los espacios f&iacute;sicos.</p><p>Pintura, resanes, ajustes, adecuaciones b&aacute;sicas y mantenimiento general de instalaciones.</p>
+            </article></section>
 
-        <!-- ELECTRICIDAD -->
-        <div class="service-box">
-            <h3>Electricidad</h3>
-            <p>
-                Servicios eléctricos para instalaciones comerciales,
-                empresariales e institucionales.
-            </p>
-            <p>
-                Instalación y mantenimiento de redes eléctricas,
-                luminarias, tomas, tableros eléctricos y corrección
-                de fallas.
-            </p>
-        </div>
+<!-- SERVICIOS RELACIONADOS -->
+<aside aria-labelledby="servicios-relacionados-titulo">
+    <h2 id="servicios-relacionados-titulo" class="section-title">Servicios relacionados</h2>
+    <ul class="related-services">
+        <li><a href="servicios-infraestructura.html">Infraestructura Tecnol&oacute;gica</a></li>
+        <li><a href="servicios-seguridad-electronica.html">Seguridad Electr&oacute;nica</a></li>
+        <li><a href="servicios-administracion-ti.html">Administraci&oacute;n de TI</a></li>
+    </ul>
+</aside>
 
-        <!-- PLOMERÍA -->
-        <div class="service-box">
-            <h3>Plomería</h3>
-            <p>
-                Soluciones para sistemas hidráulicos y sanitarios
-                en edificaciones.
-            </p>
-            <p>
-                Reparación de fugas, instalación de tuberías,
-                mantenimiento de redes sanitarias y
-                destape de tuberías con sonda manual y eléctrica.
-            </p>
-        </div>
-
-        <!-- ARREGLOS LOCATIVOS -->
-        <div class="service-box">
-            <h3>Arreglos Locativos Generales</h3>
-            <p>
-                Adecuaciones y reparaciones menores para conservar
-                y mejorar los espacios físicos.
-            </p>
-            <p>
-                Pintura, resanes, ajustes, adecuaciones básicas
-                y mantenimiento general de instalaciones.
-            </p>
-        </div>
-
-    </div>
-</section>
-
-<!-- ================= CTA ================= -->
+<!-- CTA -->
 <section class="cta">
-    <h2>Mantenga sus instalaciones en óptimas condiciones</h2>
-    <a href="contacto.html" class="btn">Solicitar servicio</a>
+    <h2>Mantenga sus instalaciones en &oacute;ptimas condiciones</h2>
+    <a href="contacto.html" class="btn btn--amber">Solicitar servicio</a>
 </section>
 
-<!-- ================= FOOTER ================= -->
+</main>
+
 <footer>
-    © 2026 NTS – Network Technical Solutions
+    <section>
+        <h3>NTS &ndash; Network Technical Solutions S.A.S.</h3>
+        <address>
+            <p>NIT 902041949-1</p>
+            <p>Cra 105a # 130d - 54, Bogot&aacute;, Colombia</p>
+        </address>
+    </section>
+    <section>
+        <h3>Contacto</h3>
+        <address>
+            <p><a href="tel:+573215855417">+57 321 585 5417</a></p>
+            <p><a href="mailto:comercial.ntssas@gmail.com">comercial.ntssas@gmail.com</a></p>
+            <p>Lun a vie: 8:00 a.m. &ndash; 6:00 p.m. &middot; S&aacute;b: 8:00 a.m. &ndash; 1:00 p.m.</p>
+        </address>
+    </section>
+    <nav aria-label="Enlaces del pie de p&aacute;gina">
+        <h3>Enlaces</h3>
+        <p><a href="quienes-somos.html">Qui&eacute;nes somos</a></p>
+        <p><a href="contacto.html">Contacto</a></p>
+        <p><a href="politica-tratamiento-datos.html">Pol&iacute;tica de tratamiento de datos personales</a></p>
+    </nav>
+    <p class="footer-bottom">
+        &copy; 2026 NTS &ndash; Network Technical Solutions S.A.S. Todos los derechos reservados.
+    </p>
 </footer>
-    
-<!-- BOTÓN DE WHATSAPP (AGREGAR AQUÍ) -->
-<a href="https://wa.me/573209165739" class="whatsapp" target="_blank">
-<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
+
+<a href="https://wa.me/573215855417?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20los%20servicios%20de%20NTS"
+   class="whatsapp"
+   target="_blank"
+   rel="noopener"
+   aria-label="Escribir por WhatsApp">
+    <img src="img/chat-icon.svg" width="32" height="32" alt="" aria-hidden="true">
 </a>
-<!-- FIN BOTÓN -->
-    
+
+<script src="js/fondo-red.js" defer></script>
+<script src="js/nav.js"></script>
 </body>
 </html>

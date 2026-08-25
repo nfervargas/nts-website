@@ -1,0 +1,985 @@
+/* =====================================================
+   NTS — Design tokens
+   Paleta clara y fría de "sala de control" con un
+   acento ámbar (luz de estado) usado con moderación.
+===================================================== */
+:root {
+    --color-fondo: #1291D6;
+    --color-superficie: #FFFFFF;
+    --color-texto: #0F1B2D;
+    --color-texto-suave: #52607A;
+    --color-primario: #0B5FA5;
+    --color-primario-oscuro: #084677;
+    --color-acento: #C46A00;       /* ámbar oscurecido para cumplir WCAG AA sobre blanco */
+    --color-acento-suave: #E8963C;
+    --color-tinta: #0F1B2D;        /* navy oscuro: footer, banda CTA alterna */
+    --color-borde: #DCE3EE;
+    --color-fondo-suave: #EEF2F8;
+    --color-exito: #1e7e34;
+    --color-error: #c0392b;
+
+    --fuente-display: 'Space Grotesk', 'Segoe UI', Arial, sans-serif;
+    --fuente-base: 'Inter', 'Segoe UI', Arial, sans-serif;
+    --fuente-mono: 'IBM Plex Mono', 'Courier New', monospace;
+
+    --radio-base: 10px;
+    --radio-chico: 6px;
+    --sombra-suave: 0 8px 24px rgba(15, 27, 45, 0.10);
+    --sombra-media: 0 16px 40px rgba(15, 27, 45, 0.14);
+
+    /* Motivo de firma: nodos de red conectados, como fondo repetible
+       de muy baja opacidad (dos tramas de puntos desfasadas). */
+    --patron-nodos: radial-gradient(circle at 20px 20px, rgba(11, 95, 165, 0.18) 1.6px, transparent 1.6px),
+        radial-gradient(circle at 70px 55px, rgba(196, 106, 0, 0.16) 1.6px, transparent 1.6px);
+}
+
+/* =====================
+   BASE
+===================== */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: var(--fuente-base);
+    color: var(--color-texto);
+    background-color: var(--color-fondo);
+    background-image: linear-gradient(150deg, #0B6FB0 0%, #1291D6 45%, #17ACE0 100%);
+    -webkit-font-smoothing: antialiased;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* =====================
+   FONDO DINÁMICO — red de fibra óptica
+   #fondo-red es un <canvas> fijo detrás de todo el contenido: nodos
+   blancos que flotan y se reacomodan todo el tiempo, conectados por
+   haces con brillo sobre los que viaja un pulso de luz, sobre el nuevo
+   azul vívido de marca. Las secciones con fondo propio (cta, footer,
+   tarjetas blancas) lo cubren sin problema.
+===================== */
+#fondo-red {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    display: block;
+    pointer-events: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    color: var(--color-primario);
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--fuente-display);
+    letter-spacing: -0.01em;
+    line-height: 1.15;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+.dropdown-toggle:focus-visible {
+    outline: 3px solid var(--color-primario);
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+/* =====================
+   HEADER — barra compacta y sticky
+===================== */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 14px 40px;
+    background: rgba(246, 248, 251, 0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--color-borde);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0;
+}
+
+.logo img {
+    height: 44px;
+    width: auto;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.15;
+}
+
+.logo-text .brand-name {
+    margin: 0;
+    font-family: var(--fuente-display);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--color-texto);
+}
+
+.logo-text p {
+    margin: 0;
+    font-size: 12px;
+    color: var(--color-texto-suave);
+}
+
+@media (max-width: 640px) {
+    .logo-text p {
+        display: none;
+    }
+}
+
+/* =====================
+   MENÚ
+===================== */
+.main-nav > ul {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.main-nav li {
+    list-style: none;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--color-texto);
+    font-weight: 500;
+    font-size: 15px;
+    white-space: nowrap;
+    padding-bottom: 3px;
+    border-bottom: 2px solid transparent;
+}
+
+nav a:hover,
+nav a:focus-visible {
+    color: var(--color-primario);
+}
+
+nav a[aria-current="page"] {
+    border-bottom-color: var(--color-acento-suave);
+}
+
+/* =====================
+   HERO — dos columnas vía CSS Grid, sin <div>:
+   la figura ocupa la columna 2 y todas las filas; el resto
+   del contenido se autoubica en la columna 1.
+===================== */
+.hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+    align-items: center;
+    gap: 20px 56px;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 64px 40px;
+}
+
+.eyebrow {
+    grid-column: 1;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 0 14px;
+    font-family: var(--fuente-mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.92);
+}
+
+.eyebrow::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--color-acento-suave);
+    flex-shrink: 0;
+}
+
+.hero h1 {
+    grid-column: 1;
+    font-size: 44px;
+    max-width: 620px;
+    margin: 0 0 18px;
+    color: #ffffff;
+}
+
+.hero p {
+    grid-column: 1;
+    font-size: 18px;
+    max-width: 560px;
+    color: rgba(255, 255, 255, 0.86);
+    margin: 0 0 32px;
+}
+
+.hero .btn {
+    grid-column: 1;
+    justify-self: start;
+}
+
+.hero-visual {
+    grid-column: 2;
+    grid-row: 1 / -1;
+    margin: 0;
+    position: relative;
+}
+
+.hero-visual img {
+    display: block;
+    width: 100%;
+    height: 340px;
+    object-fit: cover;
+    border-radius: var(--radio-base);
+    box-shadow: var(--sombra-media);
+    border: 4px solid var(--color-superficie);
+    outline: 1px solid var(--color-borde);
+}
+
+.hero-visual figcaption {
+    position: absolute;
+    left: 20px;
+    bottom: -18px;
+    background: var(--color-superficie);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-chico);
+    padding: 8px 14px;
+    font-family: var(--fuente-mono);
+    font-size: 12px;
+    color: var(--color-texto);
+    box-shadow: var(--sombra-suave);
+}
+
+@media (max-width: 860px) {
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 40px 24px;
+        text-align: left;
+    }
+
+    .hero-visual {
+        grid-column: 1;
+        grid-row: auto;
+        order: -1;
+        margin-bottom: 28px;
+    }
+
+    .hero-visual img {
+        height: 220px;
+    }
+
+    .hero h1 {
+        grid-column: 1;
+        font-size: 30px;
+        max-width: none;
+    }
+
+    .hero p {
+        grid-column: 1;
+        max-width: none;
+    }
+}
+
+/* =====================
+   BOTONES
+===================== */
+.btn {
+    display: inline-block;
+    padding: 13px 26px;
+    background-color: var(--color-primario);
+    color: #ffffff;
+    text-decoration: none;
+    border: none;
+    border-radius: var(--radio-chico);
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.15s ease, transform 0.15s ease;
+}
+
+.btn:hover {
+    background-color: var(--color-primario-oscuro);
+    transform: translateY(-1px);
+}
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.btn--amber {
+    background-color: var(--color-acento-suave);
+    color: var(--color-tinta);
+}
+
+.btn--amber:hover {
+    background-color: var(--color-acento);
+    color: #ffffff;
+}
+
+.btn--ghost {
+    background: transparent;
+    color: inherit;
+    border: 1.5px solid currentColor;
+}
+
+.btn--ghost:hover {
+    background: rgba(255, 255, 255, 0.12);
+    transform: translateY(-1px);
+}
+
+/* =====================
+   SECCIONES
+===================== */
+section {
+    padding: 72px 40px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.section-title {
+    font-size: 30px;
+    margin: 0 0 44px;
+    color: #ffffff;
+}
+
+/* Dentro de <aside> el fondo sigue siendo el panel claro (--color-fondo-suave),
+   así que el título vuelve al texto oscuro habitual para seguir siendo legible. */
+aside .section-title {
+    color: var(--color-texto);
+}
+
+/* =====================
+   SERVICIOS
+===================== */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 28px;
+}
+
+.services-grid > .section-title {
+    grid-column: 1 / -1;
+}
+
+.service-box {
+    background: var(--color-superficie);
+    border: 1px solid var(--color-borde);
+    border-left: 3px solid var(--color-primario);
+    border-radius: var(--radio-base);
+    padding: 28px 26px;
+    transition: border-left-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.service-box:hover {
+    border-left-color: var(--color-acento-suave);
+    box-shadow: var(--sombra-suave);
+    transform: translateY(-2px);
+}
+
+.service-icon {
+    width: 30px;
+    height: 30px;
+    color: var(--color-primario);
+    margin-bottom: 16px;
+}
+
+.service-box:hover .service-icon {
+    color: var(--color-acento);
+}
+
+.service-box h3 {
+    margin: 0 0 10px;
+    font-size: 20px;
+}
+
+.service-box p {
+    color: var(--color-texto-suave);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* =====================
+   PROCESO / TIMELINE — nodos conectados por una línea,
+   coherente con el motivo de "red" de la marca.
+===================== */
+.process {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 34px 30px;
+    list-style: none;
+    margin: 0;
+    padding: 26px 0 0;
+    position: relative;
+}
+
+.process::before {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 4%;
+    right: 4%;
+    height: 2px;
+    background: repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.4) 0 8px, transparent 8px 14px);
+}
+
+@media (max-width: 700px) {
+    .process::before {
+        display: none;
+    }
+}
+
+.process-step {
+    position: relative;
+    padding-left: 4px;
+}
+
+.process-step h3 {
+    font-size: 17px;
+    margin: 14px 0 6px;
+    color: #ffffff;
+}
+
+.process-step p {
+    color: rgba(255, 255, 255, 0.82);
+    margin: 0;
+}
+
+.process-step .step-number {
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--color-superficie);
+    border: 2px solid var(--color-primario);
+    color: var(--color-primario);
+    font-family: var(--fuente-mono);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* =====================
+   CTA — banda de acento en azul de marca
+===================== */
+.cta {
+    background-color: var(--color-primario);
+    background-image: var(--patron-nodos);
+    background-size: 90px 90px, 90px 90px;
+    background-blend-mode: soft-light;
+    color: #ffffff;
+    text-align: center;
+    padding: 72px 40px;
+    border-radius: var(--radio-base);
+    max-width: 1200px;
+}
+
+.cta h2 {
+    font-size: 30px;
+    margin: 0 0 22px;
+    color: #ffffff;
+}
+
+/* =====================
+   FOOTER
+===================== */
+footer {
+    background-color: var(--color-tinta);
+    color: #ffffff;
+    padding-block: 46px 20px;
+    padding-inline: max(20px, calc((100% - 1200px) / 2));
+    font-size: 14px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    border-top: 3px solid transparent;
+    border-image: linear-gradient(90deg, var(--color-primario), var(--color-acento-suave)) 1;
+}
+
+footer section {
+    padding: 0;
+    max-width: none;
+    margin: 0;
+}
+
+footer address {
+    font-style: normal;
+    margin: 0;
+}
+
+footer h3 {
+    margin: 0 0 12px;
+    font-size: 14px;
+    font-family: var(--fuente-mono);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #9FB6C9;
+}
+
+footer a {
+    color: #E4ECF6;
+    text-decoration: none;
+}
+
+footer a:hover,
+footer a:focus-visible {
+    text-decoration: underline;
+    color: var(--color-acento-suave);
+}
+
+footer p {
+    margin: 4px 0;
+    color: #C6D3E3;
+}
+
+.footer-bottom {
+    grid-column: 1 / -1;
+    margin: 25px 0 0;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    text-align: center;
+    color: #7E93AB;
+    font-size: 13px;
+}
+
+/* =====================
+   MENÚ DESPLEGABLE
+===================== */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-toggle {
+    background: none;
+    border: none;
+    padding: 0;
+    color: var(--color-texto);
+    font-weight: 500;
+    font-size: 15px;
+    font-family: inherit;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+}
+
+.dropdown-toggle:hover {
+    color: var(--color-primario);
+}
+
+.dropdown-toggle[aria-current="true"] {
+    color: var(--color-primario);
+    border-bottom: 2px solid var(--color-acento-suave);
+    padding-bottom: 3px;
+}
+
+.dropdown-toggle .chevron {
+    font-size: 11px;
+    transition: transform 0.2s ease;
+}
+
+.dropdown.is-open .dropdown-toggle .chevron {
+    transform: rotate(180deg);
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: var(--color-superficie);
+    min-width: 250px;
+    box-shadow: var(--sombra-media);
+    border-radius: var(--radio-base);
+    border: 1px solid var(--color-borde);
+    overflow: hidden;
+    z-index: 1000;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 12px 18px;
+    color: var(--color-texto);
+    text-decoration: none;
+    font-size: 14px;
+    border-bottom: none;
+}
+
+.dropdown-content a:hover,
+.dropdown-content a:focus-visible {
+    background: var(--color-fondo-suave);
+    color: var(--color-primario);
+}
+
+.dropdown.is-open .dropdown-content,
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* =====================
+   BOTÓN FLOTANTE DE WHATSAPP
+===================== */
+.whatsapp {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: #25D366;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--sombra-media);
+    z-index: 1000;
+    transition: transform 0.15s ease;
+}
+
+.whatsapp:hover {
+    transform: scale(1.06);
+}
+
+.whatsapp img {
+    width: 30px;
+    height: 30px;
+}
+
+/* =====================
+   PÁGINA DE CONTACTO
+===================== */
+.contact-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 18px;
+    margin: 0 0 10px;
+    padding: 0;
+    list-style: none;
+}
+
+.contact-card {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 14px;
+    align-items: start;
+    padding: 18px;
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-base);
+    background: var(--color-superficie);
+}
+
+.contact-card .icon {
+    grid-row: 1 / -1;
+    grid-column: 1;
+    width: 22px;
+    height: 22px;
+    color: var(--color-primario);
+}
+
+.contact-card h3 {
+    grid-column: 2;
+    margin: 0 0 4px;
+    font-size: 15px;
+    font-family: var(--fuente-base);
+    font-weight: 600;
+}
+
+.contact-card p,
+.contact-card a {
+    grid-column: 2;
+    margin: 0;
+    font-size: 15px;
+    color: var(--color-texto);
+    text-decoration: none;
+}
+
+.contact-card a:hover {
+    color: var(--color-primario);
+}
+
+.map-embed {
+    border: 0;
+    border-radius: var(--radio-base);
+    width: 100%;
+    height: 320px;
+    margin-top: 30px;
+    filter: grayscale(0.15);
+}
+
+/* Formulario */
+.form-field {
+    margin: 0 0 18px;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label {
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    font-family: var(--fuente-mono);
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: var(--color-texto-suave);
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="tel"],
+.contact-form textarea {
+    padding: 12px 14px;
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-chico);
+    font-size: 15px;
+    font-family: var(--fuente-base);
+    width: 100%;
+    background: var(--color-superficie);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--color-primario);
+}
+
+.contact-form input[aria-invalid="true"],
+.contact-form textarea[aria-invalid="true"] {
+    border-color: var(--color-error);
+}
+
+.field-error {
+    color: var(--color-error);
+    font-size: 13px;
+    margin-top: 4px;
+    min-height: 16px;
+}
+
+.form-check {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 14px;
+    margin-bottom: 18px;
+}
+
+.form-check input {
+    margin-top: 4px;
+}
+
+/* Honeypot: oculto para personas, visible para bots */
+.hp-field {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    margin: 0;
+}
+
+.form-status {
+    min-height: 20px;
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+.form-status--pending {
+    color: var(--color-texto-suave);
+}
+
+.form-status--success {
+    color: var(--color-exito);
+    font-weight: bold;
+}
+
+.form-status--error {
+    color: var(--color-error);
+    font-weight: bold;
+}
+
+/* =====================
+   ASIDE (contenido complementario)
+===================== */
+aside {
+    background-color: var(--color-fondo-suave);
+    padding: 48px 40px;
+    max-width: 1200px;
+    margin: 40px auto;
+    border-radius: var(--radio-base);
+    border: 1px solid var(--color-borde);
+}
+
+aside .section-title {
+    font-size: 23px;
+    margin-bottom: 18px;
+}
+
+.related-services,
+.quick-contact,
+.quick-facts {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+}
+
+.related-services a,
+.quick-contact a {
+    display: block;
+    padding: 14px 18px;
+    background: var(--color-superficie);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-chico);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.related-services a:hover,
+.quick-contact a:hover,
+.related-services a:focus-visible,
+.quick-contact a:focus-visible {
+    border-color: var(--color-primario);
+    color: var(--color-primario);
+}
+
+.quick-facts li {
+    padding: 14px 18px;
+    background: var(--color-superficie);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-chico);
+}
+
+.document-index {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.document-index li {
+    margin-bottom: 8px;
+}
+
+/* =====================
+   TABLA DE HORARIO (dl/dt/dd vía CSS Grid)
+===================== */
+.schedule-caption {
+    text-align: left;
+    font-size: 14px;
+    color: var(--color-texto-suave);
+    margin: 0 0 10px;
+}
+
+.schedule-list {
+    display: grid;
+    grid-template-columns: minmax(160px, auto) 1fr;
+    margin: 0;
+    background: var(--color-superficie);
+    border-radius: var(--radio-base);
+    overflow: hidden;
+    border: 1px solid var(--color-borde);
+}
+
+.schedule-list dt,
+.schedule-list dd {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--color-borde);
+}
+
+.schedule-list dt {
+    font-weight: 600;
+    background: var(--color-fondo-suave);
+    font-family: var(--fuente-mono);
+    font-size: 13px;
+}
+
+.schedule-list dd {
+    margin: 0;
+    color: var(--color-texto);
+}
+
+.schedule-list dt:nth-last-of-type(1),
+.schedule-list dd:nth-last-of-type(1) {
+    border-bottom: none;
+}
+
+@media (max-width: 480px) {
+    .schedule-list {
+        grid-template-columns: 1fr;
+    }
+
+    .schedule-list dt {
+        border-bottom: none;
+        padding-bottom: 4px;
+    }
+
+    .schedule-list dd {
+        padding-top: 0;
+    }
+}
+
+/* =====================
+   MODO CELULAR
+===================== */
+@media (max-width: 768px) {
+    header {
+        flex-wrap: wrap;
+        padding: 14px 20px;
+    }
+
+    .main-nav > ul {
+        gap: 14px;
+        justify-content: center;
+    }
+
+    .dropdown-content {
+        position: static;
+        box-shadow: none;
+        width: 100%;
+        text-align: center;
+    }
+
+    section {
+        padding: 48px 20px;
+    }
+
+    .cta {
+        border-radius: 0;
+        max-width: none;
+    }
+
+    footer {
+        text-align: center;
+    }
+}
