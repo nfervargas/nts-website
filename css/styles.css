@@ -645,9 +645,14 @@ footer p {
     color: var(--color-primario);
 }
 
-.dropdown.is-open .dropdown-content,
-.dropdown:hover .dropdown-content {
+.dropdown.is-open .dropdown-content {
     display: block;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
 }
 
 /* =====================
